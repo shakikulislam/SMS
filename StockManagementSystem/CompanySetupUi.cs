@@ -31,7 +31,12 @@ namespace StockManagementSystem
         public CompanySetupUi()
         {
             InitializeComponent();
-            ShowData();
+
+            // Display Record
+            dataTable = ShowData();
+            displayDataGridView.DataSource = dataTable;
+            displayDataGridView.Columns[0].Width = 50;
+            displayDataGridView.Columns[1].Width = 310;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -64,7 +69,12 @@ namespace StockManagementSystem
                 DatabaseConnection.sqlConnection.Close();
 
                 nameTextBox.Clear();
-                ShowData();
+
+                // Display Record
+                dataTable=ShowData();
+                displayDataGridView.DataSource = dataTable;
+                displayDataGridView.Columns[0].Width = 50;
+                displayDataGridView.Columns[1].Width = 310;
                 
 
             }
@@ -73,7 +83,6 @@ namespace StockManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
-
 
         private bool Exists(string name)
         {
@@ -112,7 +121,7 @@ namespace StockManagementSystem
             return isExists;
         }
 
-        private void ShowData()
+        private DataTable ShowData()
         {
             try
             {
@@ -122,10 +131,7 @@ namespace StockManagementSystem
                 sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
-                displayDataGridView.DataSource = dataTable;
-                displayDataGridView.Columns[0].Width = 50;
-                displayDataGridView.Columns[1].Width = 310;
-
+                
                 DatabaseConnection.sqlConnection.Close();
 
             }
@@ -133,6 +139,7 @@ namespace StockManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
+            return dataTable;
         }
 
         private void nameTextBox_KeyDown(object sender, KeyEventArgs e)

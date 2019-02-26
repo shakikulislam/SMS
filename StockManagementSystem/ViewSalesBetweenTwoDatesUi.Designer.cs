@@ -82,12 +82,14 @@
             this.fromDateTimePicker.Name = "fromDateTimePicker";
             this.fromDateTimePicker.Size = new System.Drawing.Size(126, 24);
             this.fromDateTimePicker.TabIndex = 8;
+            this.fromDateTimePicker.ValueChanged += new System.EventHandler(this.fromDateTimePicker_ValueChanged);
             // 
             // toDateTimePicker
             // 
             this.toDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.toDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toDateTimePicker.CustomFormat = "";
+            this.toDateTimePicker.Enabled = false;
             this.toDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.toDateTimePicker.Location = new System.Drawing.Point(294, 53);
@@ -111,6 +113,7 @@
             this.displayDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.displayDataGridView.Size = new System.Drawing.Size(523, 217);
             this.displayDataGridView.TabIndex = 9;
+            this.displayDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.displayDataGridView_RowPostPaint);
             // 
             // ViewSalesBetweenTwoDatesUi
             // 
