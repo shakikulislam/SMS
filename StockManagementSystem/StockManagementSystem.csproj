@@ -57,8 +57,10 @@
       <DependentUpon>HomeUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CompanySetup.cs" />
-    <Compile Include="Models\ViewSalesBetweenTwoDates.cs" />
+    <Compile Include="Models\DatabaseConnection.cs" />
+    <Compile Include="Models\StockOut.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewSalesBetweenTwoDatesUi.cs">
       <SubType>Form</SubType>

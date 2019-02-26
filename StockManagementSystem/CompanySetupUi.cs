@@ -15,25 +15,23 @@ namespace StockManagementSystem
     public partial class CompanySetupUi : Form
     {
         CompanySetup companySetup=new CompanySetup();
-        SqlConnection sqlConnection;
         SqlCommand sqlCommand;
         SqlDataReader sqlDataReader;
         SqlDataAdapter sqlDataAdapter;
         DataTable dataTable;
 
-        string connectionString = @"Server=SHAKIKUL-PC\SQLEXPRESS;Database=StockManagementSystemDb;Integrated Security=true";
+        private void Connect()
+        {
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            databaseConnection.ConnectionDatabase();
+            sqlCommand = new SqlCommand();
+            sqlCommand.Connection = DatabaseConnection.sqlConnection;
+        } 
         
         public CompanySetupUi()
         {
             InitializeComponent();
-            try
-            {
-                ShowData();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Error...\n"+exception.Message);
-            }
+            ShowData();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -51,7 +49,7 @@ namespace StockManagementSystem
 
             if (Exists(companySetup.Name))
             {
-                MessageBox.Show("Company Already Exists.");
+                MessageBox.Show("This Company Already Exists.");
                 nameTextBox.Focus();
                 return;
             }
@@ -59,13 +57,11 @@ namespace StockManagementSystem
             try
             {
                 // Save Data
-                sqlConnection = new SqlConnection(connectionString);
-                string query = @"INSERT INTO CompanyS(Name)VALUES('" + companySetup.Name + "')";
-                sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlConnection.Open();
+                Connect();
+                sqlCommand.CommandText = @"INSERT INTO CompanyS(Name)VALUES('" + companySetup.Name + "')";
                 int isExecuted = sqlCommand.ExecuteNonQuery();
                 MessageBox.Show(isExecuted > 0 ? "Company Saved." : "Not Saved.");
-                sqlConnection.Close();
+                DatabaseConnection.sqlConnection.Close();
 
                 nameTextBox.Clear();
                 ShowData();
@@ -85,10 +81,8 @@ namespace StockManagementSystem
 
             try
             {
-                sqlConnection = new SqlConnection(connectionString);
-                string query = @"SELECT * FROM CompanyS WHERE Name = '" + name + "'";
-                sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlConnection.Open();
+                Connect();
+                sqlCommand.CommandText = @"SELECT * FROM CompanyS WHERE Name = '" + name + "'";
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 string data = "";
@@ -96,7 +90,6 @@ namespace StockManagementSystem
                 {
                     data = sqlDataReader["Name"].ToString();
                 }
-
                 if (!String.IsNullOrEmpty(data))
                 {
                     isExists = true;
@@ -106,7 +99,7 @@ namespace StockManagementSystem
                     isExists = false;
                 }
 
-                sqlConnection.Close();
+                DatabaseConnection.sqlConnection.Close();
 
 
             }
@@ -123,9 +116,9 @@ namespace StockManagementSystem
         {
             try
             {
-                sqlConnection = new SqlConnection(connectionString);
-                string queryShowData = @"SELECT *FROM CompanyS";
-                sqlCommand= new SqlCommand(queryShowData, sqlConnection);
+                
+                Connect();
+                sqlCommand.CommandText = "SELECT *FROM CompanyS";
                 sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
@@ -133,7 +126,7 @@ namespace StockManagementSystem
                 displayDataGridView.Columns[0].Width = 50;
                 displayDataGridView.Columns[1].Width = 310;
 
-                sqlConnection.Close();
+                DatabaseConnection.sqlConnection.Close();
 
             }
             catch (Exception ex)
