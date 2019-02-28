@@ -33,3 +33,14 @@ E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.cs
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
