@@ -36,5 +36,11 @@ namespace StockManagementSystem
 
         }
 
+        private void StockInButton_Click(object sender, EventArgs e)
+        {
+            StockInUi stockInUi = new StockInUi();
+            stockInUi.ShowDialog();
+        }
+
     }
 }

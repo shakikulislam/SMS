@@ -48,15 +48,15 @@
             // nameTextBox
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTextBox.Location = new System.Drawing.Point(188, 56);
+            this.nameTextBox.Location = new System.Drawing.Point(188, 53);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(160, 26);
+            this.nameTextBox.Size = new System.Drawing.Size(173, 26);
             this.nameTextBox.TabIndex = 12;
             // 
             // SaveButton
             // 
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Location = new System.Drawing.Point(275, 94);
+            this.SaveButton.Location = new System.Drawing.Point(288, 94);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(73, 35);
             this.SaveButton.TabIndex = 11;
@@ -95,7 +95,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "CategorySetupUi";
             this.ShowIcon = false;
-            this.Text = "Category Setup";           
+            this.Text = "Category Setup";
             ((System.ComponentModel.ISupportInitialize)(this.displayDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

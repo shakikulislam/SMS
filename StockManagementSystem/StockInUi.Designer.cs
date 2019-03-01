@@ -1,6 +1,6 @@
 ﻿namespace StockManagementSystem
 {
-    partial class StockIn
+    partial class StockInUi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // StockInUi
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "StockIn";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "StockInUi";
+            this.ShowIcon = false;
+            this.Text = "Stock In";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

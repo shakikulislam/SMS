@@ -95,6 +95,7 @@
             this.StockInButton.TabIndex = 0;
             this.StockInButton.Text = "Stock In";
             this.StockInButton.UseVisualStyleBackColor = true;
+            this.StockInButton.Click += new System.EventHandler(this.StockInButton_Click);
             // 
             // StockOutButton
             // 
