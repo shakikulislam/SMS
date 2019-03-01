@@ -51,6 +51,7 @@
             this.CatetorySetupButton.TabIndex = 0;
             this.CatetorySetupButton.Text = "Category Setup";
             this.CatetorySetupButton.UseVisualStyleBackColor = true;
+            this.CatetorySetupButton.Click += new System.EventHandler(this.CatetorySetupButton_Click);
             // 
             // ComapnySetupButton
             // 

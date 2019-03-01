@@ -29,5 +29,12 @@ namespace StockManagementSystem
             viewSalesBetweenTwoDatesUi.ShowDialog();
         }
 
+        private void CatetorySetupButton_Click(object sender, EventArgs e)
+        {
+            CategorySetupUi categorySetupUi = new CategorySetupUi();
+            categorySetupUi.ShowDialog();
+
+        }
+
     }
 }
