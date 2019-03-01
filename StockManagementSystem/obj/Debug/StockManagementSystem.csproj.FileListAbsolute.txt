@@ -44,5 +44,8 @@ C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockMan
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
+=======
+>>>>>>> 6102ac61b3bd14c516fbe4098dd38b7a7cd8dfff
