@@ -47,26 +47,38 @@ namespace StockManagementSystem
         private void SaveButton_Click(object sender, EventArgs e)
         {
             item.CompanyId = Convert.ToInt32(companyComboBox.SelectedValue);
-
+            item.Id = Convert.ToInt32(itemComboBox.SelectedValue);
           
-            double availableQuantity = Convert.ToDouble(availableQuantityTextBox.Text);
-            double stockInQuantity = Convert.ToDouble(stockInQuantityTextBox.Text);
-            double quantity = 0;
+            int stockInQuantity = Convert.ToInt32(stockInQuantityTextBox.Text);
+            
             try
             {
+                int availableQuantity= Add(item.Id, stockInQuantity);
+                bool isUpdate= UpdateAvailableQuantity(item.Id, availableQuantity);
+                if (!isUpdate)
+                {
+                    MessageBox.Show("Update Faild.");
+                }
+                DateTime nowDateTime = DateTime.Now;
                 // Save Data
                 Connect();
-                DateTime nowDateTime = DateTime.Now;
-                sqlCommand.CommandText = @"INSERT INTO StockIn([Available Quantity],[Stock In Quantity],[Date],[Company ID],[Item ID]) VALUES('" + availableQuantity + "','" + stockInQuantity + "','" + nowDateTime.ToShortDateString() + "','" + companyComboBox.SelectedValue + "','" + itemComboBox.SelectedValue + "')";
+                sqlCommand.CommandText = @"INSERT INTO StockIn(StockInQuantity,Date,CompanyID,ItemID) VALUES('" + stockInQuantity + "','" + nowDateTime.ToShortDateString() + "','" + item.CompanyId + "','" + item.Id + "')";
                 //DatabaseConnection.sqlConnection.Open();
-                quantity = Add(availableQuantity, stockInQuantity);
-                Display(quantity);
-
                 int isExecuted = sqlCommand.ExecuteNonQuery();
-                MessageBox.Show(isExecuted > 0 ? "Company Saved." : "Not Saved.");
+                if (isExecuted>0)
+                {
+                    MessageBox.Show("Saved");
+                    reorderLevelTextBox.Clear();
+                    availableQuantityTextBox.Clear();
+                    stockInQuantityTextBox.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Not Saved.");
+                }
+
 
                 DatabaseConnection.sqlConnection.Close();
-
             }
             catch (Exception ex)
             {
@@ -74,21 +86,59 @@ namespace StockManagementSystem
             }
         }
 
-        private double Add(double availableQuantity, double stockInQuantity)
+        private int Add(int id,int stockInQuantity)
         {
-            double quantity = availableQuantity + stockInQuantity;
-            return quantity;
+            int result=0;
+            int availableQuantity=0;
+            try
+            {
+                Connect();
+                sqlCommand.CommandText = "SELECT AvailableQuantity FROM Items WHERE ID='" + id + "'";
+                sqlDataReader = sqlCommand.ExecuteReader();
+                if (sqlDataReader.Read())
+                {
+                    availableQuantity = Convert.ToInt32(sqlDataReader["AvailableQuantity"]);
+                }
+                if (availableQuantity > 0)
+                {
+                    result = availableQuantity + stockInQuantity;
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            return result;
         }
 
-        private void Display(double quantity)
+        private bool UpdateAvailableQuantity(int id,int availableQuantity)
         {
-            availableQuantityTextBox.Text = quantity.ToString();
+            bool isSuccess = false;
+            try
+            {
+                Connect();
+                sqlCommand.CommandText = "UPDATE Items SET AvailableQuantity='" + availableQuantity + "' WHERE ID='"+id+"'";
+                int isExecuted = sqlCommand.ExecuteNonQuery();
+                if (isExecuted>0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            return isSuccess;
 
         }
         private DataTable GetCompanyCombo()
         {
             Connect();
-            sqlCommand.CommandText = @"SELECT ID, Name FROM CompanyS";
+            sqlCommand.CommandText = @"SELECT ID, Name FROM Companys";
 
             //DatabaseConnection.sqlConnection.Open();
             sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -124,8 +174,8 @@ namespace StockManagementSystem
 
 
             Connect();
-            sqlCommand.CommandText = "SELECT * FROM CompanyItemView  where Company='" + companyComboBox.Text + "'";
-            SqlDataReader sqlDataReader;
+            sqlCommand.CommandText = "SELECT * FROM Items  where CompanyId='" + companyComboBox.SelectedValue + "'";
+            
 
             try
             {
@@ -153,8 +203,8 @@ namespace StockManagementSystem
             try
             {
                 Connect();
-                
-                sqlCommand.CommandText = "SELECT * From ItemsStockInView where Name='" + itemComboBox.Text + "'";
+
+                sqlCommand.CommandText = "SELECT * From Items where ID='" + itemComboBox.SelectedValue + "'";
                 SqlDataReader sqlDataReader;
 
 
@@ -164,7 +214,7 @@ namespace StockManagementSystem
                 {
 
                     string reorderLevel = sqlDataReader["ReorderLevel"].ToString();
-                    string availableQuantity = sqlDataReader["Available Quantity"].ToString();
+                    string availableQuantity = sqlDataReader["AvailableQuantity"].ToString();
                     reorderLevelTextBox.Text = reorderLevel;
                     availableQuantityTextBox.Text = availableQuantity;
                 }

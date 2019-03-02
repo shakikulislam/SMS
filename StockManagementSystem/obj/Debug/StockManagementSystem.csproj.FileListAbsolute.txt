@@ -11,3 +11,16 @@ C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockMan
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+E:\My Create\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+E:\My Create\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+E:\My Create\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
+E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
