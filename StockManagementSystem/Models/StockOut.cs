@@ -12,7 +12,7 @@ namespace StockManagementSystem.Models
         private string stockId;
         private string itemId;
         private string stockOutQuantity;
-        private string stockOutType;
+      //  private string stockOutType;
         private string date;
 
         public int Id

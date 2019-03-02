@@ -65,6 +65,7 @@
     <Compile Include="Models\CategorySetup.cs" />
     <Compile Include="Models\CompanySetup.cs" />
     <Compile Include="Models\DatabaseConnection.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\StockOut.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -115,7 +116,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="StockManagementSystem.Models.CategorySetup.datasource" />
+    <None Include="StockManagementSystem.Models.CompanySetup.datasource" />
     <None Include="StockManagementSystem.Models.DatabaseConnection.datasource" />
+    <None Include="StockManagementSystem.Models.Item.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

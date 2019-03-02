@@ -1,51 +1,13 @@
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
-E:\My Create\VS2013\BITM\WindowsForms\Project\Project 01\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
-E:\My Create\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
-E:\My Create\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
-E:\My Create\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
-E:\Shimleen\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
-E:\Shimleen\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
-E:\Shimleen\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
-E:\My Create\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
-E:\My Create\VS2013\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
-E:\My Create\VS2013\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe
-E:\My Create\VS2013\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
-E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
-C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
-C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
-C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
 C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
-<<<<<<< HEAD
-C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
-C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
-=======
->>>>>>> 6102ac61b3bd14c516fbe4098dd38b7a7cd8dfff
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+C:\Users\Shimleen\Desktop\SMS Final\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
