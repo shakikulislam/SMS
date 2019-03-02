@@ -45,7 +45,7 @@
             this.CatetorySetupButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.CatetorySetupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CatetorySetupButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CatetorySetupButton.Location = new System.Drawing.Point(26, 132);
+            this.CatetorySetupButton.Location = new System.Drawing.Point(26, 143);
             this.CatetorySetupButton.Name = "CatetorySetupButton";
             this.CatetorySetupButton.Size = new System.Drawing.Size(280, 80);
             this.CatetorySetupButton.TabIndex = 0;
@@ -59,7 +59,7 @@
             this.ComapnySetupButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ComapnySetupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComapnySetupButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComapnySetupButton.Location = new System.Drawing.Point(312, 132);
+            this.ComapnySetupButton.Location = new System.Drawing.Point(312, 143);
             this.ComapnySetupButton.Name = "ComapnySetupButton";
             this.ComapnySetupButton.Size = new System.Drawing.Size(280, 80);
             this.ComapnySetupButton.TabIndex = 0;
@@ -74,7 +74,7 @@
             this.ItemSetupButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ItemSetupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemSetupButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemSetupButton.Location = new System.Drawing.Point(598, 132);
+            this.ItemSetupButton.Location = new System.Drawing.Point(598, 143);
             this.ItemSetupButton.Name = "ItemSetupButton";
             this.ItemSetupButton.Size = new System.Drawing.Size(280, 80);
             this.ItemSetupButton.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.StockInButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.StockInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StockInButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockInButton.Location = new System.Drawing.Point(26, 218);
+            this.StockInButton.Location = new System.Drawing.Point(26, 229);
             this.StockInButton.Name = "StockInButton";
             this.StockInButton.Size = new System.Drawing.Size(280, 80);
             this.StockInButton.TabIndex = 0;
@@ -102,12 +102,13 @@
             this.StockOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.StockOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StockOutButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockOutButton.Location = new System.Drawing.Point(312, 218);
+            this.StockOutButton.Location = new System.Drawing.Point(312, 229);
             this.StockOutButton.Name = "StockOutButton";
             this.StockOutButton.Size = new System.Drawing.Size(280, 80);
             this.StockOutButton.TabIndex = 0;
             this.StockOutButton.Text = "Stock Out";
             this.StockOutButton.UseVisualStyleBackColor = true;
+            this.StockOutButton.Click += new System.EventHandler(this.StockOutButton_Click);
             // 
             // SearchAndViewItemSummaryButton
             // 
@@ -116,7 +117,7 @@
             this.SearchAndViewItemSummaryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.SearchAndViewItemSummaryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchAndViewItemSummaryButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchAndViewItemSummaryButton.Location = new System.Drawing.Point(598, 218);
+            this.SearchAndViewItemSummaryButton.Location = new System.Drawing.Point(598, 229);
             this.SearchAndViewItemSummaryButton.Name = "SearchAndViewItemSummaryButton";
             this.SearchAndViewItemSummaryButton.Size = new System.Drawing.Size(280, 80);
             this.SearchAndViewItemSummaryButton.TabIndex = 0;
@@ -130,7 +131,7 @@
             this.ViewSalesBetweenTwoDatesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ViewSalesBetweenTwoDatesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewSalesBetweenTwoDatesButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewSalesBetweenTwoDatesButton.Location = new System.Drawing.Point(312, 304);
+            this.ViewSalesBetweenTwoDatesButton.Location = new System.Drawing.Point(312, 315);
             this.ViewSalesBetweenTwoDatesButton.Name = "ViewSalesBetweenTwoDatesButton";
             this.ViewSalesBetweenTwoDatesButton.Size = new System.Drawing.Size(280, 80);
             this.ViewSalesBetweenTwoDatesButton.TabIndex = 0;
@@ -140,6 +141,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
@@ -154,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(904, 461);
+            this.ClientSize = new System.Drawing.Size(904, 462);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ViewSalesBetweenTwoDatesButton);
             this.Controls.Add(this.SearchAndViewItemSummaryButton);
@@ -163,6 +165,8 @@
             this.Controls.Add(this.ItemSetupButton);
             this.Controls.Add(this.ComapnySetupButton);
             this.Controls.Add(this.CatetorySetupButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimumSize = new System.Drawing.Size(920, 500);
             this.Name = "HomeUi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Srock Management System";

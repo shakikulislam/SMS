@@ -27,6 +27,8 @@ namespace StockManagementSystem
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            displayDataGridView.DataSource = null;
+
             displayDataGridView.ColumnCount = 1;
             displayDataGridView.Columns[0].Name = "SL";
             displayDataGridView.Columns[0].Width = 50;

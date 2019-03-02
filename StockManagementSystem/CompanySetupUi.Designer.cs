@@ -78,7 +78,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.displayDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.displayDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.displayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayDataGridView.Location = new System.Drawing.Point(33, 103);
             this.displayDataGridView.Name = "displayDataGridView";

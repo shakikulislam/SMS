@@ -103,6 +103,9 @@
             this.displayDataGridView.AllowUserToDeleteRows = false;
             this.displayDataGridView.AllowUserToResizeColumns = false;
             this.displayDataGridView.AllowUserToResizeRows = false;
+            this.displayDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.displayDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.displayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayDataGridView.Location = new System.Drawing.Point(40, 117);
@@ -119,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 365);
+            this.ClientSize = new System.Drawing.Size(603, 369);
             this.Controls.Add(this.displayDataGridView);
             this.Controls.Add(this.toDateTimePicker);
             this.Controls.Add(this.fromDateTimePicker);

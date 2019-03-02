@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,10 +59,17 @@
     </Compile>
     <Compile Include="Models\CompanySetup.cs" />
     <Compile Include="Models\DatabaseConnection.cs" />
+    <Compile Include="Models\Items.cs" />
     <Compile Include="Models\StockOut.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockOutUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockOutUi.Designer.cs">
+      <DependentUpon>StockOutUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewSalesBetweenTwoDatesUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StockOutUi.resx">
+      <DependentUpon>StockOutUi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewSalesBetweenTwoDatesUi.resx">
       <DependentUpon>ViewSalesBetweenTwoDatesUi.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +106,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StockManagementSystem.Models.CompanySetup.datasource" />
+    <None Include="StockManagementSystem.Models.Items.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

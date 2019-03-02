@@ -36,7 +36,7 @@ namespace StockManagementSystem
             dataTable = ShowData();
             displayDataGridView.DataSource = dataTable;
             displayDataGridView.Columns[0].Width = 50;
-            displayDataGridView.Columns[1].Width = 310;
+            displayDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -74,8 +74,8 @@ namespace StockManagementSystem
                 dataTable=ShowData();
                 displayDataGridView.DataSource = dataTable;
                 displayDataGridView.Columns[0].Width = 50;
-                displayDataGridView.Columns[1].Width = 310;
-                
+                displayDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 
             }
             catch (Exception ex)

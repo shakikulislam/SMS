@@ -15,6 +15,7 @@ namespace StockManagementSystem
         public HomeUi()
         {
             InitializeComponent();
+
         }
 
         private void ComapnySetupButton_Click(object sender, EventArgs e)
@@ -27,6 +28,12 @@ namespace StockManagementSystem
         {
             ViewSalesBetweenTwoDatesUi viewSalesBetweenTwoDatesUi=new ViewSalesBetweenTwoDatesUi();
             viewSalesBetweenTwoDatesUi.ShowDialog();
+        }
+
+        private void StockOutButton_Click(object sender, EventArgs e)
+        {
+            StockOutUi stockOutUi=new StockOutUi();
+            stockOutUi.ShowDialog();
         }
 
     }

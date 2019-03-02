@@ -28,6 +28,7 @@ E:\My Create\VS2013\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pd
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockOutUi.resources
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
