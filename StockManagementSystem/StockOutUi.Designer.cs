@@ -82,6 +82,7 @@
             this.Column4});
             this.displayDataGridView.GridColor = System.Drawing.SystemColors.Control;
             this.displayDataGridView.Location = new System.Drawing.Point(36, 246);
+            this.displayDataGridView.MultiSelect = false;
             this.displayDataGridView.Name = "displayDataGridView";
             this.displayDataGridView.ReadOnly = true;
             this.displayDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -89,6 +90,8 @@
             this.displayDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.displayDataGridView.Size = new System.Drawing.Size(692, 234);
             this.displayDataGridView.TabIndex = 15;
+            this.displayDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayDataGridView_CellDoubleClick);
+            this.displayDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.displayDataGridView_RowPostPaint);
             // 
             // Column1
             // 
@@ -163,6 +166,7 @@
             this.LostButton.TabIndex = 16;
             this.LostButton.Text = "Lost";
             this.LostButton.UseVisualStyleBackColor = true;
+            this.LostButton.Click += new System.EventHandler(this.LostButton_Click);
             // 
             // DamageButton
             // 
@@ -174,6 +178,7 @@
             this.DamageButton.TabIndex = 17;
             this.DamageButton.Text = "Damage";
             this.DamageButton.UseVisualStyleBackColor = true;
+            this.DamageButton.Click += new System.EventHandler(this.DamageButton_Click);
             // 
             // SellButton
             // 
@@ -185,6 +190,7 @@
             this.SellButton.TabIndex = 18;
             this.SellButton.Text = "Sell";
             this.SellButton.UseVisualStyleBackColor = true;
+            this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
             // label3
             // 
