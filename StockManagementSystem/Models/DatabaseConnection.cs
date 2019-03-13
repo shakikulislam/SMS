@@ -9,7 +9,7 @@ namespace StockManagementSystem.Models
 {
     class DatabaseConnection
     {
-        string connectionString = @"Server=SHAKIKUL-PC\SQLEXPRESS;Database=StockManagementSystemDb;Integrated Security=true";
+        string connectionString = @"Server=TOUHID;Database=StockManagementSystemDb;Integrated Security=true";
         public static SqlConnection sqlConnection=null;
         public void ConnectionDatabase()
         {

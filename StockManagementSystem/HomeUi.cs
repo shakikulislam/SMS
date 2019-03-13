@@ -49,5 +49,17 @@ namespace StockManagementSystem
             stockInUi.ShowDialog();
         }
 
+        private void ItemSetupButton_Click(object sender, EventArgs e)
+        {
+            ItemSetupUi itemSetupUi = new ItemSetupUi();
+            itemSetupUi.ShowDialog();
+        }
+
+        private void SearchAndViewItemSummaryButton_Click(object sender, EventArgs e)
+        {
+            SearchAndViewItemsUi searchAndViewItemsUi = new SearchAndViewItemsUi();
+            searchAndViewItemsUi.ShowDialog();
+        }
+
     }
 }
