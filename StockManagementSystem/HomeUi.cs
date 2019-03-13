@@ -32,8 +32,21 @@ namespace StockManagementSystem
 
         private void StockOutButton_Click(object sender, EventArgs e)
         {
-            StockOutUi stockOutUi=new StockOutUi();
+            StockOutUi stockOutUi = new StockOutUi();
             stockOutUi.ShowDialog();
+        }
+
+        private void CatetorySetupButton_Click(object sender, EventArgs e)
+        {
+            CategorySetupUi categorySetupUi = new CategorySetupUi();
+            categorySetupUi.ShowDialog();
+
+        }
+
+        private void StockInButton_Click(object sender, EventArgs e)
+        {
+            StockInUi stockInUi = new StockInUi();
+            stockInUi.ShowDialog();
         }
 
     }

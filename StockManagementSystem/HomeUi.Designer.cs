@@ -51,6 +51,7 @@
             this.CatetorySetupButton.TabIndex = 0;
             this.CatetorySetupButton.Text = "Category Setup";
             this.CatetorySetupButton.UseVisualStyleBackColor = true;
+            this.CatetorySetupButton.Click += new System.EventHandler(this.CatetorySetupButton_Click);
             // 
             // ComapnySetupButton
             // 
@@ -94,6 +95,7 @@
             this.StockInButton.TabIndex = 0;
             this.StockInButton.Text = "Stock In";
             this.StockInButton.UseVisualStyleBackColor = true;
+            this.StockInButton.Click += new System.EventHandler(this.StockInButton_Click);
             // 
             // StockOutButton
             // 

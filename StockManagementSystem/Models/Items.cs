@@ -11,7 +11,7 @@ namespace StockManagementSystem.Models
         private int id;
         private string name;
         private int reorderLevel;
-        private string companyId;
+        private int companyId;
         private string categoryId;
         private int availableQuantity;
 
@@ -33,7 +33,7 @@ namespace StockManagementSystem.Models
             set { reorderLevel = value; }
         }
 
-        public string CompanyId
+        public int CompanyId
         {
             get { return companyId; }
             set { companyId = value; }
