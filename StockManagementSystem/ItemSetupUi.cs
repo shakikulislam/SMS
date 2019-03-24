@@ -123,12 +123,8 @@ namespace StockManagementSystem
                 {
                     itemSetup.ReorderLevel = Convert.ToInt32(reorderLevelTextBox.Text);
                     Connect();
-                    sqlCommand.CommandText = @"INSERT INTO Items  ([Name]
-           ,[CompanyId]
-           ,[CategoryId]
-           ,[ReorderLevel])
-      
-     VALUES ('" + itemSetup.ItemName + "'," + companyComboBox.SelectedValue + "," + categoryComboBox.SelectedValue + "," + itemSetup.ReorderLevel + ")";
+                    sqlCommand.CommandText = @"INSERT INTO Items  ([Name],[CompanyId],[CategoryId],[ReorderLevel])      
+                    VALUES ('" + itemSetup.ItemName + "'," + companyComboBox.SelectedValue + "," + categoryComboBox.SelectedValue + "," + itemSetup.ReorderLevel + ")";
 
                     int isExecuted = sqlCommand.ExecuteNonQuery();
                     if (isExecuted > 0)
