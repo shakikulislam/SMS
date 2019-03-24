@@ -65,3 +65,17 @@ E:\My Create\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.Ge
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
 E:\My Create\VS2013\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
+D:\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+D:\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+D:\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockOutUi.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
