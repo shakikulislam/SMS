@@ -81,6 +81,7 @@
             this.ItemSetupButton.TabIndex = 0;
             this.ItemSetupButton.Text = "Item Setup";
             this.ItemSetupButton.UseVisualStyleBackColor = true;
+            this.ItemSetupButton.Click += new System.EventHandler(this.ItemSetupButton_Click);
             // 
             // StockInButton
             // 
@@ -125,6 +126,7 @@
             this.SearchAndViewItemSummaryButton.TabIndex = 0;
             this.SearchAndViewItemSummaryButton.Text = "Search && View Items Summary";
             this.SearchAndViewItemSummaryButton.UseVisualStyleBackColor = true;
+            this.SearchAndViewItemSummaryButton.Click += new System.EventHandler(this.SearchAndViewItemSummaryButton_Click);
             // 
             // ViewSalesBetweenTwoDatesButton
             // 

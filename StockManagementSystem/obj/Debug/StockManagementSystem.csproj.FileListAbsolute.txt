@@ -79,3 +79,39 @@ D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
 D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockOutUi.resources
 D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
 D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockOutUi.resources
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
+E:\BITM\project 1\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csprojResolveAssemblyReference.cache
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CategorySetupUi.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.CompanySetupUi.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.HomeUi.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ItemSetupUi.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockInUi.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.StockOutUi.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ViewSalesBetweenTwoDatesUi.resources
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+E:\BITM\project 1\final\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.SearchAndViewItemsUi.resources
+E:\BITM\project 1\final - Copy\Test Temp\SMS\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+E:\BITM\project 1\final - Copy\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+E:\BITM\project 1\final - Copy\Test Temp\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.pdb
+>>>>>>> 2356748b49b5f839b8c6e327b1631d4cb7f8fa6b
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.ItemSetupUi.resources
+D:\SMS\StockManagementSystem\obj\Debug\StockManagementSystem.SearchAndViewItemsUi.resources
