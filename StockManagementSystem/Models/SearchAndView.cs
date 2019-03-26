@@ -8,18 +8,40 @@ namespace StockManagementSystem.Models
 {
     class SearchAndView
     {
-        private string category;
-        private string company;
+        private string name;
+        private string categoryName;
+        private string companyName;
+        private int availableQuantity;
+        private int reorderLevel;
 
-        public string Category
+        public string Name
         {
-            get { return category ; }
-            set { category = value; }
+            get { return name; }
+            set { name = value; }
         }
-        public string Company
+
+        public string CategoryName
         {
-            get { return company; }
-            set { company = value; }
+            get { return categoryName; }
+            set { categoryName = value; }
+        }
+
+        public string CompanyName
+        {
+            get { return companyName; }
+            set { companyName = value; }
+        }
+
+        public int AvailableQuantity
+        {
+            get { return availableQuantity; }
+            set { availableQuantity = value; }
+        }
+
+        public int ReorderLevel
+        {
+            get { return reorderLevel; }
+            set { reorderLevel = value; }
         }
     }
 }

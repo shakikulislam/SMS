@@ -33,12 +33,16 @@ namespace StockManagementSystem
         public CategorySetupUi()
         {
             InitializeComponent();
+        }
+
+        private void CategorySetupUi_Load(object sender, EventArgs e)
+        {
             dataTable = ShowData();
             displayDataGridView.DataSource = dataTable;
-            displayDataGridView.Columns[0].Width = 50;
-            displayDataGridView.Columns[1].Width = 310;
-                        
-
+            foreach (DataGridViewRow row in displayDataGridView.Rows)
+            {
+                row.Cells["Sl"].Value = (row.Index + 1).ToString();
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -87,25 +91,26 @@ namespace StockManagementSystem
                 DatabaseConnection.sqlConnection.Close();
                 nameTextBox.Clear();
 
-                
                 dataTable = ShowData();
                 displayDataGridView.DataSource = dataTable;
-                displayDataGridView.Columns[0].Width = 50;
-                displayDataGridView.Columns[1].Width = 310;
+                foreach (DataGridViewRow row in displayDataGridView.Rows)
+                {
+                    row.Cells["Sl"].Value = (row.Index + 1).ToString();
+                }
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
-            }          
+            }
                        
         }
+
         private DataTable ShowData()
         {
             try
             {
                 Connect();
                 
-
                 sqlCommand.CommandText = @"SELECT *FROM Categories";               
                 sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 dataTable = new DataTable();
@@ -120,7 +125,7 @@ namespace StockManagementSystem
             }
             return dataTable;
         }
-         private bool Exists(string name)
+        private bool Exists(string name)
         {
             bool isExists = false;
 
@@ -156,8 +161,7 @@ namespace StockManagementSystem
             return isExists;
         }
 
-       
-         private void displayDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void displayDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
              {
                 try
                 {

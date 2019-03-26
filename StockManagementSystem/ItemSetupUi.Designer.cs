@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 347);
+            this.ClientSize = new System.Drawing.Size(540, 320);
             this.Controls.Add(this.reorderValidationLabel);
             this.Controls.Add(this.itemValiditionLabel);
             this.Controls.Add(this.SaveButton);
@@ -182,6 +182,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ItemSetupUi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Item Setup";
             this.Load += new System.EventHandler(this.ItemSetupUi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.companySetupBindingSource)).EndInit();

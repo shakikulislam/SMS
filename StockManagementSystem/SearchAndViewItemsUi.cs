@@ -66,36 +66,49 @@ namespace StockManagementSystem
         {
             try
             {
-                searchAndView.Company = companyComboBox.Text;
+                searchAndView.CompanyName = companyComboBox.Text;
+                searchAndView.CategoryName = categoryComboBox.Text;
 
                 Connect();
 
                 if (companyComboBox.Text == "" && categoryComboBox.Text != "")
                 {
 
-                    sqlCommand.CommandText = @"SELECT * FROM ItemsSetupView WHERE ( CatagoryName = '" + searchAndView.Category + "') ";
+                    sqlCommand.CommandText = @"SELECT * FROM ItemsSetupView WHERE ( CategoryName = '" + searchAndView.CategoryName + "') ";
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     showDataGridView.DataSource = dataTable;
+                    foreach (DataGridViewRow row in showDataGridView.Rows)
+                    {
+                        row.Cells["Sl"].Value = (row.Index + 1).ToString();
+                    }
                 }
                 else if (companyComboBox.Text != "" && categoryComboBox.Text == "")
                 {
-                    sqlCommand.CommandText = @"SELECT * FROM ItemsSetupView WHERE ( CompanyName = '" + searchAndView.Company + "') ";
+                    sqlCommand.CommandText = @"SELECT * FROM ItemsSetupView WHERE ( CompanyName = '" + searchAndView.CompanyName + "') ";
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     showDataGridView.DataSource = dataTable;
+                    foreach (DataGridViewRow row in showDataGridView.Rows)
+                    {
+                        row.Cells["Sl"].Value = (row.Index + 1).ToString();
+                    }
                 }
                 else
                 {
 
-                    sqlCommand.CommandText = @"SELECT * FROM ItemsSetupView WHERE ( CatagoryName = '" + searchAndView.Category + "') AND ( CompanyName = '" + searchAndView.Company + "') ";
+                    sqlCommand.CommandText = @"SELECT * FROM ItemsSetupView WHERE ( CategoryName = '" + searchAndView.CategoryName + "') AND ( CompanyName = '" + searchAndView.CompanyName + "') ";
 
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     showDataGridView.DataSource = dataTable;
+                    foreach (DataGridViewRow row in showDataGridView.Rows)
+                    {
+                        row.Cells["Sl"].Value = (row.Index + 1).ToString();
+                    }
                 }
 
 
@@ -117,12 +130,12 @@ namespace StockManagementSystem
 
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            searchAndView.Category = categoryComboBox.Text;
+            searchAndView.CategoryName = categoryComboBox.Text;
 
 
             Connect();
 
-            sqlCommand.CommandText = @"SELECT DISTINCT CompanyName FROM ItemsSetupView WHERE ( CatagoryName = '" + searchAndView.Category + "') ";
+            sqlCommand.CommandText = @"SELECT DISTINCT CompanyName FROM ItemsSetupView WHERE ( CategoryName = '" + searchAndView.CategoryName + "') ";
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             DataSet dataSet = new DataSet();

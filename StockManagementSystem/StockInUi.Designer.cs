@@ -33,6 +33,7 @@
             this.availableQuantityTextBox = new System.Windows.Forms.TextBox();
             this.reorderLevelTextBox = new System.Windows.Forms.TextBox();
             this.itemComboBox = new System.Windows.Forms.ComboBox();
+            this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyComboBox = new System.Windows.Forms.ComboBox();
             this.companySetupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SaveButton = new System.Windows.Forms.Button();
@@ -41,9 +42,8 @@
             this.reorderLevelLabel = new System.Windows.Forms.Label();
             this.itemLabel = new System.Windows.Forms.Label();
             this.companyLabel = new System.Windows.Forms.Label();
-            this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.companySetupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companySetupBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // stockInQuantityTextBox
@@ -59,6 +59,7 @@
             this.availableQuantityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.availableQuantityTextBox.Location = new System.Drawing.Point(228, 193);
             this.availableQuantityTextBox.Name = "availableQuantityTextBox";
+            this.availableQuantityTextBox.ReadOnly = true;
             this.availableQuantityTextBox.Size = new System.Drawing.Size(121, 26);
             this.availableQuantityTextBox.TabIndex = 31;
             // 
@@ -67,6 +68,7 @@
             this.reorderLevelTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reorderLevelTextBox.Location = new System.Drawing.Point(228, 142);
             this.reorderLevelTextBox.Name = "reorderLevelTextBox";
+            this.reorderLevelTextBox.ReadOnly = true;
             this.reorderLevelTextBox.Size = new System.Drawing.Size(121, 26);
             this.reorderLevelTextBox.TabIndex = 30;
             // 
@@ -83,6 +85,10 @@
             this.itemComboBox.TabIndex = 29;
             this.itemComboBox.ValueMember = "ID";
             this.itemComboBox.SelectedIndexChanged += new System.EventHandler(this.itemComboBox_SelectedIndexChanged);
+            // 
+            // itemsBindingSource
+            // 
+            this.itemsBindingSource.DataSource = typeof(StockManagementSystem.Models.Items);
             // 
             // companyComboBox
             // 
@@ -163,10 +169,6 @@
             this.companyLabel.TabIndex = 22;
             this.companyLabel.Text = "Company";
             // 
-            // itemsBindingSource
-            // 
-            this.itemsBindingSource.DataSource = typeof(StockManagementSystem.Models.Items);
-            // 
             // StockInUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,9 +188,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "StockInUi";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Stock In";
-            ((System.ComponentModel.ISupportInitialize)(this.companySetupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companySetupBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

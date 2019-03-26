@@ -82,6 +82,7 @@
             this.fromDateTimePicker.Name = "fromDateTimePicker";
             this.fromDateTimePicker.Size = new System.Drawing.Size(126, 24);
             this.fromDateTimePicker.TabIndex = 8;
+            this.fromDateTimePicker.Value = new System.DateTime(2019, 3, 26, 0, 0, 0, 0);
             this.fromDateTimePicker.ValueChanged += new System.EventHandler(this.fromDateTimePicker_ValueChanged);
             // 
             // toDateTimePicker
@@ -116,7 +117,6 @@
             this.displayDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.displayDataGridView.Size = new System.Drawing.Size(523, 217);
             this.displayDataGridView.TabIndex = 9;
-            this.displayDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.displayDataGridView_RowPostPaint);
             // 
             // ViewSalesBetweenTwoDatesUi
             // 

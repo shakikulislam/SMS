@@ -14,11 +14,11 @@ namespace StockManagementSystem
 {
     public partial class CompanySetupUi : Form
     {
-        CompanySetup companySetup=new CompanySetup();
-        SqlCommand sqlCommand;
-        SqlDataReader sqlDataReader;
-        SqlDataAdapter sqlDataAdapter;
-        DataTable dataTable;
+        private CompanySetup companySetup = new CompanySetup();
+        private SqlCommand sqlCommand;
+        private SqlDataReader sqlDataReader;
+        private SqlDataAdapter sqlDataAdapter;
+        private DataTable dataTable;
 
         private void Connect()
         {
@@ -26,19 +26,22 @@ namespace StockManagementSystem
             databaseConnection.ConnectionDatabase();
             sqlCommand = new SqlCommand();
             sqlCommand.Connection = DatabaseConnection.sqlConnection;
-        } 
-        
+        }
+
         public CompanySetupUi()
         {
             InitializeComponent();
-
-            // Display Record
-            dataTable = ShowData();
-            displayDataGridView.DataSource = dataTable;
-            displayDataGridView.Columns[0].Width = 50;
-            displayDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
+        private void CompanySetupUi_Load(object sender, EventArgs e)
+        {
+            dataTable = ShowData();
+            displayDataGridView.DataSource = dataTable;
+            foreach (DataGridViewRow row in displayDataGridView.Rows)
+            {
+                row.Cells["Sl"].Value = (row.Index + 1).ToString();
+            }
+        }
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(nameTextBox.Text))
@@ -71,11 +74,12 @@ namespace StockManagementSystem
                 nameTextBox.Clear();
 
                 // Display Record
-                dataTable=ShowData();
+                dataTable = ShowData();
                 displayDataGridView.DataSource = dataTable;
-                displayDataGridView.Columns[0].Width = 50;
-                displayDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+                foreach (DataGridViewRow row in displayDataGridView.Rows)
+                {
+                    row.Cells["Sl"].Value = (row.Index + 1).ToString();
+                }
 
             }
             catch (Exception ex)
@@ -125,13 +129,13 @@ namespace StockManagementSystem
         {
             try
             {
-                
+
                 Connect();
                 sqlCommand.CommandText = "SELECT *FROM CompanyS";
                 sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
-                
+
                 DatabaseConnection.sqlConnection.Close();
 
             }
@@ -144,7 +148,7 @@ namespace StockManagementSystem
 
         private void nameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 SaveButton.PerformClick();
                 e.SuppressKeyPress = true;

@@ -132,33 +132,13 @@ namespace StockManagementSystem
             AddButton.Enabled = false;
         }
 
-        private bool ReorderLevelWorning(int id)
-        {
-            bool isExecute = false;
-            int reorderLevel = 0;
-            try
-            {
-                Connect();
-                sqlCommand.CommandText = "SELECT ReorderLevel FROM Items WHERE ID='" + id + "' ";
-                sqlDataReader = sqlCommand.ExecuteReader();
-                reorderLevel = sqlDataReader.Read() ? Convert.ToInt32(sqlDataReader["ReorderLevel"]) : reorderLevel=0;
-                isExecute = reorderLevel < 5 ? isExecute = true : isExecute = false;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-            DatabaseConnection.sqlConnection.Close();
-            return isExecute;
-        }
-
-        private bool UpdateAvailableQuantityAndReorderLevel(string itemName, int reorderLevel, int availableQuantity)
+        private bool UpdateAvailableQuantity(string itemName, int availableQuantity)
         {
             bool isExecute = false;
             try
             {
                 Connect();
-                sqlCommand.CommandText = "UPDATE Items  SET ReorderLevel='" + reorderLevel + "', AvailableQuantity='" + availableQuantity + "' WHERE Name='" + itemName + "'";
+                sqlCommand.CommandText = "UPDATE Items  SET AvailableQuantity='" + availableQuantity + "' WHERE Name='" + itemName + "'";
                 int executeNonQuery = sqlCommand.ExecuteNonQuery();
                 isExecute = executeNonQuery > 0 ? isExecute = true : isExecute = false;
                 
@@ -192,29 +172,7 @@ namespace StockManagementSystem
             }
             return result;
         }
-
-        private int CalculateReorderLevel(int stockOutQuantity)
-        {
-            int result=0;
-            int reorderLevel=0;
-            try
-            {
-                Connect();
-                sqlCommand.CommandText = "SELECT ReorderLevel FROM Items WHERE Name='" + items.Name + "'";
-                sqlDataReader = sqlCommand.ExecuteReader();
-                if (sqlDataReader.Read())
-                {
-                    reorderLevel = Convert.ToInt32(sqlDataReader["ReorderLevel"]);
-                    result = reorderLevel - stockOutQuantity;
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-            return result;
-        }
-
+        
         private void itemComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -227,15 +185,6 @@ namespace StockManagementSystem
                     reorderLevelTextBox.Text = ReorderLevel(items.Id);
                     availableQuantityTextBox.Text = AvailableQuantity(items.Id);
                     AddButton.Enabled = true;
-
-                    // Worning reorder level....
-                    bool isSuccess = ReorderLevelWorning(items.Id);
-                    if (isSuccess)
-                    {
-                        MessageBox.Show(itemComboBox.Text + " reorder level is low.\nPlease update reorder level.",
-                            "Reorder level update information", MessageBoxButtons.OKCancel,
-                            MessageBoxIcon.Information);
-                    }
                 }
                 else
                 {
@@ -253,28 +202,20 @@ namespace StockManagementSystem
         {
             try
             {
-                //int reorderLevel = Convert.ToInt32(reorderLevelTextBox.Text);
-                //int availableQuantity = Convert.ToInt32(availableQuantityTextBox.Text);
-                //int stockOutQuantity = Convert.ToInt32(stockOutQuantityTextBox.Text);
-                //int resultAvailableQuantity=CalculateAvailableQuantity(availableQuantity, stockOutQuantity);
-                //int resultReorderLevel= CalculateReorderLevel(reorderLevel, stockOutQuantity);
-
-                //bool updateAvailableQuantiy = UpdateAvailableQuantity(items.Id, resultAvailableQuantity);
-                //if (!updateAvailableQuantiy)
-                //{
-                //    MessageBox.Show("Available quantity update faild.");
-                //}
-                //bool updateReorderLevel = UpdateReorderLevel(items.Id, resultReorderLevel);
-                //if (!updateReorderLevel)
-                //{
-                //    MessageBox.Show("Reorder level update faild.");
-                //}
                 items.Name = itemComboBox.Text;
+                items.ReorderLevel = Convert.ToInt32(reorderLevelTextBox.Text);
+                items.AvailableQuantity = Convert.ToInt32(availableQuantityTextBox.Text);
+                int stockOutQuantity = Convert.ToInt32(stockOutQuantityTextBox.Text);
                 companySetup.Name = companyComboBox.Text;
-                int quantity = Convert.ToInt32(stockOutQuantityTextBox.Text);
+
+                bool isCheckStock = CheckStock(items.ReorderLevel, items.AvailableQuantity, stockOutQuantity);
+                if (isCheckStock)
+                {
+                    MessageBox.Show("Available quantity is very low...\nPlease stock in.");
+                    return;
+                }
 
                 bool isSuccess = FindDataGridView(items.Name, companySetup.Name);
-
                 if (isSuccess)
                 {
                     MessageBox.Show("This item allready added.\nPlease sell double click and delete it.", "Information");
@@ -294,8 +235,7 @@ namespace StockManagementSystem
                 }
                 else
                 {
-                    displayDataGridView.Rows.Add("", items.Name, companySetup.Name, quantity);
-
+                    displayDataGridView.Rows.Add("", items.Name, companySetup.Name, stockOutQuantity);
                     itemComboBox.Text = "";
                     stockOutQuantityTextBox.Clear();
                 }
@@ -309,33 +249,6 @@ namespace StockManagementSystem
         private void displayDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             displayDataGridView.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;
-        }
-
-        private void stockOutQuantityTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int reorderLevel = Convert.ToInt32(ReorderLevel(items.Id));
-                int availableQuantity = Convert.ToInt32(AvailableQuantity(items.Id));
-                int stockOutQuantity = 0;
-                stockOutQuantity = stockOutQuantityTextBox.Text != ""? stockOutQuantity = Convert.ToInt32(stockOutQuantityTextBox.Text): stockOutQuantity = 0;
-                if (stockOutQuantity>reorderLevel)
-                {
-                    MessageBox.Show("Please update reorder level or\nCheck stock out quantity");
-                    stockOutQuantityTextBox.Clear();
-                }
-                else if (stockOutQuantity > availableQuantity)
-                {
-                    MessageBox.Show("Please add items or\nCheck stock out quantity");
-                    stockOutQuantityTextBox.Clear();
-                }
-                
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                stockOutQuantityTextBox.Clear();
-            }
         }
 
         private void stockOutQuantityTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -363,6 +276,20 @@ namespace StockManagementSystem
                 }
             }
             return isFind;
+        }
+
+        private bool CheckStock(int reOrderLabel, int quantity, int outQuantity)
+        {
+            bool isCheck = false;
+            if (quantity-outQuantity<reOrderLabel)
+            {
+                isCheck = true;
+            }
+            else
+            {
+                isCheck = false;
+            }
+            return isCheck;
         }
 
         private void displayDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -403,6 +330,22 @@ namespace StockManagementSystem
             return isSuccess;
         }
 
+        private int ItemId(string name)
+        {
+            int itemId = 0;
+            Connect();
+            sqlCommand.CommandText = "SELECT ID FROM Items WHERE Name='" + name + "'";
+            sqlDataReader = sqlCommand.ExecuteReader();
+            if (sqlDataReader.Read())
+            {
+                itemId =Convert.ToInt32(sqlDataReader["ID"]);
+            }
+            else
+            {
+                throw new Exception("Item id not found...");
+            }
+            return itemId;
+        }
         private void SellButton_Click(object sender, EventArgs e)
         {
             try
@@ -413,17 +356,15 @@ namespace StockManagementSystem
                     items.Name = displayDataGridView.Rows[i].Cells[1].Value.ToString();
 
                     int currentAvailableQuantity= CalculateAvailableQuantity(stockOutQuantity);
-                    int currentReorderLevel = CalculateReorderLevel(stockOutQuantity);
 
-                    UpdateAvailableQuantityAndReorderLevel(items.Name,currentReorderLevel,currentAvailableQuantity);
+                    UpdateAvailableQuantity(items.Name,currentAvailableQuantity);
+
+                    int itemId= ItemId(items.Name);
 
                     DateTime dateTime=DateTime.Now;
-                    bool isAdded= AddStockOut(items.Id, stockOutQuantity, "Sell", dateTime.ToShortDateString());
-                    if (isAdded)
-                    {
-                        displayDataGridView.Rows.Clear();
-                    }
+                    AddStockOut(itemId, stockOutQuantity, "Sell", dateTime.ToShortDateString());
                 }
+                displayDataGridView.Rows.Clear();
             }
             catch (Exception exception)
             {
@@ -440,19 +381,16 @@ namespace StockManagementSystem
                     int stockOutQuantity = Convert.ToInt32(displayDataGridView.Rows[i].Cells[3].Value);
                     items.Name = displayDataGridView.Rows[i].Cells[1].Value.ToString();
 
-                    int currentAvailableQuantity = CalculateAvailableQuantity(stockOutQuantity);
-                    int currentReorderLevel = CalculateReorderLevel(stockOutQuantity);
+                    int currentAvailableQuantity= CalculateAvailableQuantity(stockOutQuantity);
 
-                    UpdateAvailableQuantityAndReorderLevel(items.Name, currentReorderLevel, currentAvailableQuantity);
+                    UpdateAvailableQuantity(items.Name,currentAvailableQuantity);
 
-                    DateTime dateTime = DateTime.Now;
-                    bool isAdded = AddStockOut(items.Id, stockOutQuantity, "Damage", dateTime.ToShortDateString());
-                    if (isAdded)
-                    {
-                        displayDataGridView.Rows.Clear();
-                    }
+                    int itemId= ItemId(items.Name);
 
+                    DateTime dateTime=DateTime.Now;
+                    AddStockOut(itemId, stockOutQuantity, "Damage", dateTime.ToShortDateString());
                 }
+                displayDataGridView.Rows.Clear();
             }
             catch (Exception exception)
             {
@@ -470,21 +408,29 @@ namespace StockManagementSystem
                     items.Name = displayDataGridView.Rows[i].Cells[1].Value.ToString();
 
                     int currentAvailableQuantity = CalculateAvailableQuantity(stockOutQuantity);
-                    int currentReorderLevel = CalculateReorderLevel(stockOutQuantity);
 
-                    UpdateAvailableQuantityAndReorderLevel(items.Name, currentReorderLevel, currentAvailableQuantity);
+                    UpdateAvailableQuantity(items.Name, currentAvailableQuantity);
+
+                    int itemId = ItemId(items.Name);
 
                     DateTime dateTime = DateTime.Now;
-                    bool isAdded = AddStockOut(items.Id, stockOutQuantity, "Lost", dateTime.ToShortDateString());
-                    if (isAdded)
-                    {
-                        displayDataGridView.Rows.Clear();
-                    }
+                    AddStockOut(itemId, stockOutQuantity, "Lost", dateTime.ToShortDateString());
                 }
+                displayDataGridView.Rows.Clear();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void stockOutQuantityTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr !=8)
+            {
+                e.Handled = true;
+                return;
             }
         }
 

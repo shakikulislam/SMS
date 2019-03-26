@@ -8,9 +8,9 @@ namespace StockManagementSystem
 {
     public partial class ViewSalesBetweenTwoDatesUi : Form
     {
-        SqlCommand sqlCommand;
-        SqlDataAdapter sqlDataAdapter;
-        DataTable dataTable;
+        private SqlCommand sqlCommand;
+        private SqlDataAdapter sqlDataAdapter;
+        private DataTable dataTable;
 
         private void Connect()
         {
@@ -23,6 +23,8 @@ namespace StockManagementSystem
         public ViewSalesBetweenTwoDatesUi()
         {
             InitializeComponent();
+
+            fromDateTimePicker.MaxDate=DateTime.Today;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -37,6 +39,11 @@ namespace StockManagementSystem
             displayDataGridView.DataSource = dataTable;
             displayDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             displayDataGridView.Columns[2].Width = 100;
+
+            foreach (DataGridViewRow row in displayDataGridView.Rows)
+            {
+                row.Cells["SL"].Value = (row.Index + 1).ToString();
+            }
         }
 
         public DataTable Display()
@@ -44,11 +51,14 @@ namespace StockManagementSystem
             try
             {
                 Connect();
-                sqlCommand.CommandText = "SELECT Name, SUM(StockOutQuantity) AS 'Sale Quantity' FROM SalesView  WHERE Date>='" + fromDateTimePicker.Value.ToShortDateString() + "' AND Date<='" + toDateTimePicker.Value.ToShortDateString() + "' GROUP BY Name";
+                sqlCommand.CommandText =
+                    "SELECT Name, SUM(StockOutQuantity) AS 'Sale Quantity' FROM SalesView  WHERE Date>='" +
+                    fromDateTimePicker.Value.ToShortDateString() + "' AND Date<='" +
+                    toDateTimePicker.Value.ToShortDateString() + "' GROUP BY Name";
                 sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
- 
+
                 DatabaseConnection.sqlConnection.Close();
             }
             catch (Exception exception)
@@ -62,11 +72,6 @@ namespace StockManagementSystem
         {
             toDateTimePicker.Enabled = true;
             toDateTimePicker.MinDate = fromDateTimePicker.Value;
-        }
-
-        private void displayDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            displayDataGridView.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

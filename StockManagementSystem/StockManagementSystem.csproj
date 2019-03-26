@@ -150,6 +150,7 @@
     <None Include="StockManagementSystem.Models.CompanySetup.datasource" />
     <None Include="StockManagementSystem.Models.DatabaseConnection.datasource" />
     <None Include="StockManagementSystem.Models.Items.datasource" />
+    <None Include="StockManagementSystem.Models.SearchAndView.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
