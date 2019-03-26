@@ -29,9 +29,6 @@ namespace StockManagementSystem
             {
                 categoryComboBox.DataSource = GetCategoryCombo();
 
-
-
-
             }
             catch (Exception exception)
             {

@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CategoryBll.cs" />
+    <Compile Include="BLL\CompanyBll.cs" />
+    <Compile Include="BLL\ItemBll.cs" />
     <Compile Include="CategorySetupUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +60,9 @@
     <Compile Include="CompanySetupUi.Designer.cs">
       <DependentUpon>CompanySetupUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\CategoryDal.cs" />
+    <Compile Include="DAL\CompanyDal.cs" />
+    <Compile Include="DAL\ItemDal.cs" />
     <Compile Include="HomeUi.cs">
       <SubType>Form</SubType>
     </Compile>
